@@ -1,0 +1,22 @@
+{
+  "name": "fis-optimizer-php-template-compress",
+  "version": "0.0.2",
+  "description": "php template compressor",
+  "main": "compress.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fis",
+    "fis-plus",
+    "template",
+    "php",
+    "compress",
+    "compressor"
+  ],
+  "dependencies": {
+      "html-compress": "0.0.4"
+  },
+  "author": "xiangshouding",
+  "license": "MIT"
+}
