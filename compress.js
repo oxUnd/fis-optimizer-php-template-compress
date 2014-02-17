@@ -10,7 +10,7 @@ exports.defaultOptions = {
 
 function compress(content, conf) {
     var split_tag = '<!--FIS_SPLIT_TAG-->';
-    var tmp_content = content.replace(/<\?(?:php)?[\s\S]*?\?>/g, function (m) {
+    var tmp_content = content.replace(/[ ]*<\?(?:php)?[\s\S]*?\?>[ ]*/g, function (m) {
         return split_tag + m + split_tag;
     })
     
@@ -18,7 +18,8 @@ function compress(content, conf) {
     var res = '';
     for (var i = 0, len = tokens.length; i < len; i++) {
         var section = tokens[i];
-        if (section.indexOf('<?php') == 0 || section.indexOf('<?') == 0) {
+        //if (section.indexOf('<?php') == 0 || section.indexOf('<?') == 0) {
+        if (/^[ ]*<\?php/.test(section) || /^[ ]*<\?/.test(section)) {
             //php 代码直接返回
             res += section;
         } else {
