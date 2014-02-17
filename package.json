@@ -1,6 +1,6 @@
 {
   "name": "fis-optimizer-php-template-compress",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "php template compressor",
   "main": "compress.js",
   "scripts": {
