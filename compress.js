@@ -10,9 +10,9 @@ exports.defaultOptions = {
 
 function compress(content, conf) {
     var split_tag = '<!--FIS_SPLIT_TAG-->';
-    var tmp_content = content.replace(/[ ]*<\?(?:php)?[\s\S]*?\?>[ ]*/g, function (m) {
+    var tmp_content = content.replace(/[ ]*<\?(?:php)?[\s\S]*?(?:\?>|$)[ ]*/g, function (m) {
         return split_tag + m + split_tag;
-    })
+    });
     
     var tokens = tmp_content.split(split_tag);
     var res = '';
